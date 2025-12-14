@@ -3,12 +3,12 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
     partial class FormMain_AMD
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,118 +23,136 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_AMD));
-            menuStrip_AMD = new MenuStrip();
-            openToolStripMenuItem_AMD = new ToolStripMenuItem();
-            changeToolStripMenuItem_AMD = new ToolStripMenuItem();
-            settingsToolStripMenuItem_AMD = new ToolStripMenuItem();
-            infoToolStripMenuItem_AMD = new ToolStripMenuItem();
-            helpToolStripMenuItem_AMD = new ToolStripMenuItem();
-            windowsMediaPlayer_AMD = new AxWMPLib.AxWindowsMediaPlayer();
-            fileInfoGrid_AMD = new DataGridView();
-            openFileDialog_AMD = new OpenFileDialog();
-            menuStrip_AMD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)windowsMediaPlayer_AMD).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fileInfoGrid_AMD).BeginInit();
+            panel1 = new Panel();
+            textBox1 = new TextBox();
+            buttonHelp_AMD = new Button();
+            buttonVideo_AMD = new Button();
+            buttonInfo_AMD = new Button();
+            buttonInstrument_AMD = new Button();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // menuStrip_AMD
+            // panel1
             // 
-            menuStrip_AMD.Items.AddRange(new ToolStripItem[] { openToolStripMenuItem_AMD, changeToolStripMenuItem_AMD, settingsToolStripMenuItem_AMD, infoToolStripMenuItem_AMD, helpToolStripMenuItem_AMD });
-            menuStrip_AMD.Location = new Point(0, 0);
-            menuStrip_AMD.Name = "menuStrip_AMD";
-            menuStrip_AMD.Size = new Size(993, 24);
-            menuStrip_AMD.TabIndex = 0;
-            menuStrip_AMD.Text = "menuStrip1";
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(buttonHelp_AMD);
+            panel1.Controls.Add(buttonVideo_AMD);
+            panel1.Controls.Add(buttonInfo_AMD);
+            panel1.Controls.Add(buttonInstrument_AMD);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(224, 339);
+            panel1.TabIndex = 0;
             // 
-            // openToolStripMenuItem_AMD
+            // textBox1
             // 
-            openToolStripMenuItem_AMD.Name = "openToolStripMenuItem_AMD";
-            openToolStripMenuItem_AMD.Size = new Size(78, 20);
-            openToolStripMenuItem_AMD.Text = "open video";
-            openToolStripMenuItem_AMD.Click += openToolStripMenuItem_AMD_Click;
+            textBox1.BackColor = SystemColors.Control;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            textBox1.Location = new Point(12, 12);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(199, 16);
+            textBox1.TabIndex = 6;
+            textBox1.Text = "Sprint 7 Project Application";
+            textBox1.TextAlign = HorizontalAlignment.Center;
             // 
-            // changeToolStripMenuItem_AMD
+            // buttonHelp_AMD
             // 
-            changeToolStripMenuItem_AMD.Name = "changeToolStripMenuItem_AMD";
-            changeToolStripMenuItem_AMD.Size = new Size(124, 20);
-            changeToolStripMenuItem_AMD.Text = "change information";
+            buttonHelp_AMD.Location = new Point(99, 277);
+            buttonHelp_AMD.Name = "buttonHelp_AMD";
+            buttonHelp_AMD.Size = new Size(112, 54);
+            buttonHelp_AMD.TabIndex = 5;
+            buttonHelp_AMD.Text = "Help";
+            buttonHelp_AMD.UseVisualStyleBackColor = true;
+            buttonHelp_AMD.Click += buttonHelp_AMD_Click;
             // 
-            // settingsToolStripMenuItem_AMD
+            // buttonVideo_AMD
             // 
-            settingsToolStripMenuItem_AMD.Name = "settingsToolStripMenuItem_AMD";
-            settingsToolStripMenuItem_AMD.Size = new Size(60, 20);
-            settingsToolStripMenuItem_AMD.Text = "settings";
+            buttonVideo_AMD.Location = new Point(12, 214);
+            buttonVideo_AMD.Name = "buttonVideo_AMD";
+            buttonVideo_AMD.Size = new Size(199, 57);
+            buttonVideo_AMD.TabIndex = 4;
+            buttonVideo_AMD.Text = "Video Player";
+            buttonVideo_AMD.UseVisualStyleBackColor = true;
+            buttonVideo_AMD.Click += buttonVideo_AMD_Click;
             // 
-            // infoToolStripMenuItem_AMD
+            // buttonInfo_AMD
             // 
-            infoToolStripMenuItem_AMD.Name = "infoToolStripMenuItem_AMD";
-            infoToolStripMenuItem_AMD.Size = new Size(40, 20);
-            infoToolStripMenuItem_AMD.Text = "info";
+            buttonInfo_AMD.Location = new Point(12, 277);
+            buttonInfo_AMD.Name = "buttonInfo_AMD";
+            buttonInfo_AMD.Size = new Size(81, 54);
+            buttonInfo_AMD.TabIndex = 3;
+            buttonInfo_AMD.Text = "Info";
+            buttonInfo_AMD.UseVisualStyleBackColor = true;
+            buttonInfo_AMD.Click += buttonInfo_AMD_Click;
             // 
-            // helpToolStripMenuItem_AMD
+            // buttonInstrument_AMD
             // 
-            helpToolStripMenuItem_AMD.Name = "helpToolStripMenuItem_AMD";
-            helpToolStripMenuItem_AMD.Size = new Size(42, 20);
-            helpToolStripMenuItem_AMD.Text = "help";
+            buttonInstrument_AMD.Location = new Point(12, 151);
+            buttonInstrument_AMD.Name = "buttonInstrument_AMD";
+            buttonInstrument_AMD.Size = new Size(199, 57);
+            buttonInstrument_AMD.TabIndex = 0;
+            buttonInstrument_AMD.Text = "Instruments";
+            buttonInstrument_AMD.UseVisualStyleBackColor = true;
             // 
-            // windowsMediaPlayer_AMD
+            // panel2
             // 
-            windowsMediaPlayer_AMD.Dock = DockStyle.Left;
-            windowsMediaPlayer_AMD.Enabled = true;
-            windowsMediaPlayer_AMD.Location = new Point(0, 24);
-            windowsMediaPlayer_AMD.Name = "windowsMediaPlayer_AMD";
-            windowsMediaPlayer_AMD.OcxState = (AxHost.State)resources.GetObject("windowsMediaPlayer_AMD.OcxState");
-            windowsMediaPlayer_AMD.Size = new Size(763, 426);
-            windowsMediaPlayer_AMD.TabIndex = 1;
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(224, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(128, 339);
+            panel2.TabIndex = 1;
             // 
-            // fileInfoGrid_AMD
+            // pictureBox1
             // 
-            fileInfoGrid_AMD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            fileInfoGrid_AMD.Dock = DockStyle.Right;
-            fileInfoGrid_AMD.Location = new Point(769, 24);
-            fileInfoGrid_AMD.Name = "fileInfoGrid_AMD";
-            fileInfoGrid_AMD.Size = new Size(224, 426);
-            fileInfoGrid_AMD.TabIndex = 2;
-            // 
-            // openFileDialog_AMD
-            // 
-            openFileDialog_AMD.FileName = "openFileDialog1";
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(128, 339);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // FormMain_AMD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(993, 450);
-            Controls.Add(fileInfoGrid_AMD);
-            Controls.Add(windowsMediaPlayer_AMD);
-            Controls.Add(menuStrip_AMD);
-            MainMenuStrip = menuStrip_AMD;
+            ClientSize = new Size(352, 339);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "FormMain_AMD";
-            Text = "Video Player";
-            menuStrip_AMD.ResumeLayout(false);
-            menuStrip_AMD.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)windowsMediaPlayer_AMD).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fileInfoGrid_AMD).EndInit();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Project App";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip_AMD;
-        private ToolStripMenuItem openToolStripMenuItem_AMD;
-        private ToolStripMenuItem changeToolStripMenuItem_AMD;
-        private ToolStripMenuItem settingsToolStripMenuItem_AMD;
-        private ToolStripMenuItem infoToolStripMenuItem_AMD;
-        private ToolStripMenuItem helpToolStripMenuItem_AMD;
-        private AxWMPLib.AxWindowsMediaPlayer windowsMediaPlayer_AMD;
-        private DataGridView fileInfoGrid_AMD;
-        private OpenFileDialog openFileDialog_AMD;
+        private Panel panel1;
+        private Button buttonHelp_AMD;
+        private Button buttonVideo_AMD;
+        private Button buttonInfo_AMD;
+        private Button buttonInstrument_AMD;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private TextBox textBox1;
     }
 }

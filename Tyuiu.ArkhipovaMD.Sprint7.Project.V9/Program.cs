@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 {
     internal static class Program
@@ -13,5 +15,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             ApplicationConfiguration.Initialize();
             Application.Run(new FormMain_AMD());
         }
+
     }
 }
