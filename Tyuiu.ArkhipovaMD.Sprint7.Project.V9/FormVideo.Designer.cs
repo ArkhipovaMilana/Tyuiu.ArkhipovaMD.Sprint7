@@ -32,16 +32,15 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVideo_AMD));
             menuStrip_AMD = new MenuStrip();
             openToolStripMenuItem_AMD = new ToolStripMenuItem();
-            settingsToolStripMenuItem_AMD = new ToolStripMenuItem();
             returnToolStripMenuItem = new ToolStripMenuItem();
             WMP_AMD = new AxWMPLib.AxWindowsMediaPlayer();
             openFileDialog_AMD = new OpenFileDialog();
             toolTip_AMD = new ToolTip(components);
             panel1 = new Panel();
+            buttonStop_AMD = new Button();
             buttonPlay_AMD = new Button();
             buttonForward_AMD = new Button();
             buttonBack_AMD = new Button();
-            buttonStop_AMD = new Button();
             menuStrip_AMD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)WMP_AMD).BeginInit();
             panel1.SuspendLayout();
@@ -49,7 +48,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // menuStrip_AMD
             // 
-            menuStrip_AMD.Items.AddRange(new ToolStripItem[] { openToolStripMenuItem_AMD, settingsToolStripMenuItem_AMD, returnToolStripMenuItem });
+            menuStrip_AMD.Items.AddRange(new ToolStripItem[] { openToolStripMenuItem_AMD, returnToolStripMenuItem });
             menuStrip_AMD.Location = new Point(0, 0);
             menuStrip_AMD.Name = "menuStrip_AMD";
             menuStrip_AMD.Size = new Size(635, 24);
@@ -63,13 +62,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             openToolStripMenuItem_AMD.Text = "Open";
             openToolStripMenuItem_AMD.ToolTipText = "Open video file";
             openToolStripMenuItem_AMD.Click += openToolStripMenuItem_AMD_Click;
-            // 
-            // settingsToolStripMenuItem_AMD
-            // 
-            settingsToolStripMenuItem_AMD.Name = "settingsToolStripMenuItem_AMD";
-            settingsToolStripMenuItem_AMD.Size = new Size(54, 20);
-            settingsToolStripMenuItem_AMD.Text = "Online";
-            settingsToolStripMenuItem_AMD.ToolTipText = "Settings";
             // 
             // returnToolStripMenuItem
             // 
@@ -104,6 +96,20 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             panel1.Name = "panel1";
             panel1.Size = new Size(635, 63);
             panel1.TabIndex = 2;
+            // 
+            // buttonStop_AMD
+            // 
+            buttonStop_AMD.BackgroundImageLayout = ImageLayout.None;
+            buttonStop_AMD.FlatStyle = FlatStyle.Popup;
+            buttonStop_AMD.Image = Properties.Resources.control_stop_blue;
+            buttonStop_AMD.Location = new Point(268, 3);
+            buttonStop_AMD.Name = "buttonStop_AMD";
+            buttonStop_AMD.Size = new Size(55, 55);
+            buttonStop_AMD.TabIndex = 4;
+            buttonStop_AMD.Text = " ";
+            buttonStop_AMD.TextImageRelation = TextImageRelation.TextAboveImage;
+            buttonStop_AMD.UseVisualStyleBackColor = true;
+            buttonStop_AMD.Click += buttonStop_AMD_Click;
             // 
             // buttonPlay_AMD
             // 
@@ -147,20 +153,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             buttonBack_AMD.UseVisualStyleBackColor = true;
             buttonBack_AMD.Click += buttonBack_AMD_Click;
             // 
-            // buttonStop_AMD
-            // 
-            buttonStop_AMD.BackgroundImageLayout = ImageLayout.None;
-            buttonStop_AMD.FlatStyle = FlatStyle.Popup;
-            buttonStop_AMD.Image = Properties.Resources.control_stop_blue;
-            buttonStop_AMD.Location = new Point(268, 3);
-            buttonStop_AMD.Name = "buttonStop_AMD";
-            buttonStop_AMD.Size = new Size(55, 55);
-            buttonStop_AMD.TabIndex = 4;
-            buttonStop_AMD.Text = " ";
-            buttonStop_AMD.TextImageRelation = TextImageRelation.TextAboveImage;
-            buttonStop_AMD.UseVisualStyleBackColor = true;
-            buttonStop_AMD.Click += buttonStop_AMD_Click;
-            // 
             // FormVideo_AMD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -185,7 +177,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 
         private MenuStrip menuStrip_AMD;
         private ToolStripMenuItem openToolStripMenuItem_AMD;
-        private ToolStripMenuItem settingsToolStripMenuItem_AMD;
         private AxWMPLib.AxWindowsMediaPlayer WMP_AMD;
         private OpenFileDialog openFileDialog_AMD;
         private ToolStripMenuItem returnToolStripMenuItem;
