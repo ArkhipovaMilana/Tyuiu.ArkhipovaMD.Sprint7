@@ -48,6 +48,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // menuStrip_AMD
             // 
+            menuStrip_AMD.BackgroundImage = Properties.Resources.i;
             menuStrip_AMD.Items.AddRange(new ToolStripItem[] { openToolStripMenuItem_AMD, returnToolStripMenuItem });
             menuStrip_AMD.Location = new Point(0, 0);
             menuStrip_AMD.Name = "menuStrip_AMD";
@@ -87,6 +88,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // panel1
             // 
+            panel1.BackgroundImage = Properties.Resources.i;
             panel1.Controls.Add(buttonStop_AMD);
             panel1.Controls.Add(buttonPlay_AMD);
             panel1.Controls.Add(buttonForward_AMD);

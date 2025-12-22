@@ -28,7 +28,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_AMD));
             panel1 = new Panel();
             textBox1 = new TextBox();
             buttonHelp_AMD = new Button();
@@ -106,6 +105,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             buttonInstrument_AMD.TabIndex = 0;
             buttonInstrument_AMD.Text = "Instruments";
             buttonInstrument_AMD.UseVisualStyleBackColor = true;
+            buttonInstrument_AMD.Click += buttonInstrument_AMD_Click;
             // 
             // panel2
             // 
@@ -120,7 +120,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.i;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(128, 339);

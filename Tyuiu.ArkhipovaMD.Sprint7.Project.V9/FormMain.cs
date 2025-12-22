@@ -37,5 +37,12 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             UserGuide_AMD help = new UserGuide_AMD();
             help.Show();
         }
+
+        private void buttonInstrument_AMD_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Instruments_AMD instruments = new Instruments_AMD();
+            instruments.Show();
+        }
     }
 }

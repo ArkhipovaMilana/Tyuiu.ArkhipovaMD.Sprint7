@@ -27,7 +27,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Info));
             tableLayoutPanel = new TableLayoutPanel();
             logoPictureBox = new PictureBox();
             labelProductName = new Label();
@@ -69,7 +68,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // logoPictureBox
             // 
             logoPictureBox.Dock = DockStyle.Fill;
-            logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
+            logoPictureBox.Image = Properties.Resources.i;
             logoPictureBox.Location = new Point(4, 3);
             logoPictureBox.Margin = new Padding(4, 3, 4, 3);
             logoPictureBox.Name = "logoPictureBox";
