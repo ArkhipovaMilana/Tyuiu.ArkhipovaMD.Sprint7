@@ -9,16 +9,15 @@ using System.Windows.Forms;
 
 namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 {
-    partial class Info : Form
+    partial class FormInfo_AMD : Form
     {
-        public Info()
+        public FormInfo_AMD()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
         }
 
@@ -56,7 +55,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
                 if (attributes.Length == 0)
                 {
-                    return "";
+                    return "Разработчик: Архипова М. Д.\r\nГруппа АСОиУб-25-1\r\n\r\nПрограмма разработана в рамках изучения языка C#\r\n\r\nТюменский индустриальный университет (с) 2025\r\nВысшая школа цифровых технологий (с) 2025";
                 }
                 return ((AssemblyDescriptionAttribute)attributes[0]).Description;
             }

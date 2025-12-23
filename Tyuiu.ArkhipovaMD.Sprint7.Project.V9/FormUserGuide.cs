@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 {
-    public partial class UserGuide_AMD : Form
+    public partial class FormUserGuide_AMD : Form
     {
-        public UserGuide_AMD()
+        public FormUserGuide_AMD()
         {
             InitializeComponent();
         }

@@ -26,22 +26,20 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 
         private void buttonInfo_AMD_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Info inf = new Info();
+            FormInfo_AMD inf = new FormInfo_AMD();
             inf.Show();
         }
 
         private void buttonHelp_AMD_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UserGuide_AMD help = new UserGuide_AMD();
+            FormUserGuide_AMD help = new FormUserGuide_AMD();
             help.Show();
         }
 
         private void buttonInstrument_AMD_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Instruments_AMD instruments = new Instruments_AMD();
+            FormInstruments_AMD instruments = new FormInstruments_AMD();
             instruments.Show();
         }
     }

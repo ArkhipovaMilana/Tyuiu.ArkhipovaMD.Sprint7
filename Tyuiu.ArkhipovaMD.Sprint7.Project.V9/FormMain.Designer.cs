@@ -28,48 +28,45 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            textBox1 = new TextBox();
+            panelMain_AMD = new Panel();
+            labelMain_AMD = new Label();
             buttonHelp_AMD = new Button();
             buttonVideo_AMD = new Button();
             buttonInfo_AMD = new Button();
             buttonInstrument_AMD = new Button();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
-            panel1.SuspendLayout();
+            pictureBoxMain_AMD = new PictureBox();
+            panelMain_AMD.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMain_AMD).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panelMain_AMD
             // 
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(buttonHelp_AMD);
-            panel1.Controls.Add(buttonVideo_AMD);
-            panel1.Controls.Add(buttonInfo_AMD);
-            panel1.Controls.Add(buttonInstrument_AMD);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(224, 339);
-            panel1.TabIndex = 0;
+            panelMain_AMD.Controls.Add(labelMain_AMD);
+            panelMain_AMD.Controls.Add(buttonHelp_AMD);
+            panelMain_AMD.Controls.Add(buttonVideo_AMD);
+            panelMain_AMD.Controls.Add(buttonInfo_AMD);
+            panelMain_AMD.Controls.Add(buttonInstrument_AMD);
+            panelMain_AMD.Dock = DockStyle.Left;
+            panelMain_AMD.Location = new Point(0, 0);
+            panelMain_AMD.Name = "panelMain_AMD";
+            panelMain_AMD.Size = new Size(224, 250);
+            panelMain_AMD.TabIndex = 0;
             // 
-            // textBox1
+            // labelMain_AMD
             // 
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            textBox1.Location = new Point(12, 12);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(199, 16);
-            textBox1.TabIndex = 6;
-            textBox1.Text = "Sprint 7 Project Application";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            labelMain_AMD.AutoSize = true;
+            labelMain_AMD.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelMain_AMD.Location = new Point(32, 18);
+            labelMain_AMD.Name = "labelMain_AMD";
+            labelMain_AMD.Size = new Size(159, 15);
+            labelMain_AMD.TabIndex = 7;
+            labelMain_AMD.Text = "Sprint 7 Project Application";
             // 
             // buttonHelp_AMD
             // 
-            buttonHelp_AMD.Location = new Point(99, 277);
+            buttonHelp_AMD.Location = new Point(99, 170);
             buttonHelp_AMD.Name = "buttonHelp_AMD";
             buttonHelp_AMD.Size = new Size(112, 54);
             buttonHelp_AMD.TabIndex = 5;
@@ -79,7 +76,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // buttonVideo_AMD
             // 
-            buttonVideo_AMD.Location = new Point(12, 214);
+            buttonVideo_AMD.Location = new Point(12, 107);
             buttonVideo_AMD.Name = "buttonVideo_AMD";
             buttonVideo_AMD.Size = new Size(199, 57);
             buttonVideo_AMD.TabIndex = 4;
@@ -89,7 +86,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // buttonInfo_AMD
             // 
-            buttonInfo_AMD.Location = new Point(12, 277);
+            buttonInfo_AMD.Location = new Point(12, 170);
             buttonInfo_AMD.Name = "buttonInfo_AMD";
             buttonInfo_AMD.Size = new Size(81, 54);
             buttonInfo_AMD.TabIndex = 3;
@@ -99,7 +96,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // buttonInstrument_AMD
             // 
-            buttonInstrument_AMD.Location = new Point(12, 151);
+            buttonInstrument_AMD.Location = new Point(12, 44);
             buttonInstrument_AMD.Name = "buttonInstrument_AMD";
             buttonInstrument_AMD.Size = new Size(199, 57);
             buttonInstrument_AMD.TabIndex = 0;
@@ -109,50 +106,51 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // panel2
             // 
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(pictureBoxMain_AMD);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(224, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(128, 339);
+            panel2.Size = new Size(92, 250);
             panel2.TabIndex = 1;
             // 
-            // pictureBox1
+            // pictureBoxMain_AMD
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.i;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(128, 339);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxMain_AMD.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxMain_AMD.Dock = DockStyle.Fill;
+            pictureBoxMain_AMD.Image = Properties.Resources.i;
+            pictureBoxMain_AMD.Location = new Point(0, 0);
+            pictureBoxMain_AMD.Name = "pictureBoxMain_AMD";
+            pictureBoxMain_AMD.Size = new Size(92, 250);
+            pictureBoxMain_AMD.TabIndex = 0;
+            pictureBoxMain_AMD.TabStop = false;
             // 
             // FormMain_AMD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(352, 339);
+            AutoSize = true;
+            ClientSize = new Size(316, 250);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelMain_AMD);
             Name = "FormMain_AMD";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Project App";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelMain_AMD.ResumeLayout(false);
+            panelMain_AMD.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMain_AMD).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelMain_AMD;
         private Button buttonHelp_AMD;
         private Button buttonVideo_AMD;
         private Button buttonInfo_AMD;
         private Button buttonInstrument_AMD;
         private Panel panel2;
-        private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private PictureBox pictureBoxMain_AMD;
+        private Label labelMain_AMD;
     }
 }

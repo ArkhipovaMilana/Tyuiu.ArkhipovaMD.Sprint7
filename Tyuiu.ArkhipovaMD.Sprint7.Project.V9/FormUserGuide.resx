@@ -117,4 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBoxUserGuide_AMD.Text" xml:space="preserve">
+    <value>Руководство пользователя
+Видео плеер:для использования видеоплеера откройте окно видеоплеера. Для того, чтобы открыть видео нажмите кнопку Open и выберите видеофайл. для того чтобы вернуться в меню нажмите кнопку Return</value>
+  </data>
 </root>

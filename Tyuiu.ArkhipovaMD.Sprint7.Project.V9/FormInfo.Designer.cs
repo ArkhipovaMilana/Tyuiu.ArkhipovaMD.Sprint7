@@ -1,6 +1,6 @@
 namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 {
-    partial class Info
+    partial class FormInfo_AMD
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             labelProductName = new Label();
             labelVersion = new Label();
             labelCopyright = new Label();
-            labelCompanyName = new Label();
             textBoxDescription = new TextBox();
             okButton = new Button();
             tableLayoutPanel.SuspendLayout();
@@ -48,7 +47,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             tableLayoutPanel.Controls.Add(labelProductName, 1, 0);
             tableLayoutPanel.Controls.Add(labelVersion, 1, 1);
             tableLayoutPanel.Controls.Add(labelCopyright, 1, 2);
-            tableLayoutPanel.Controls.Add(labelCompanyName, 1, 3);
             tableLayoutPanel.Controls.Add(textBoxDescription, 1, 4);
             tableLayoutPanel.Controls.Add(okButton, 1, 5);
             tableLayoutPanel.Dock = DockStyle.Fill;
@@ -113,18 +111,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             labelCopyright.Text = "Copyright";
             labelCopyright.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // labelCompanyName
-            // 
-            labelCompanyName.Dock = DockStyle.Fill;
-            labelCompanyName.Location = new Point(167, 90);
-            labelCompanyName.Margin = new Padding(7, 0, 4, 0);
-            labelCompanyName.MaximumSize = new Size(0, 20);
-            labelCompanyName.Name = "labelCompanyName";
-            labelCompanyName.Size = new Size(316, 20);
-            labelCompanyName.TabIndex = 22;
-            labelCompanyName.Text = "Company Name";
-            labelCompanyName.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // textBoxDescription
             // 
             textBoxDescription.Dock = DockStyle.Fill;
@@ -151,7 +137,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             okButton.Text = "&OK";
             okButton.Click += okButton_Click;
             // 
-            // Info
+            // FormInfo_AMD
             // 
             AcceptButton = okButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -162,7 +148,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Info";
+            Name = "FormInfo_AMD";
             Padding = new Padding(10);
             ShowIcon = false;
             ShowInTaskbar = false;
@@ -182,7 +168,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
     }

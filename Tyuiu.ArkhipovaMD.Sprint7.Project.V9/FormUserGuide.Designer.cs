@@ -1,6 +1,6 @@
 namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 {
-    partial class UserGuide_AMD
+    partial class FormUserGuide_AMD
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,27 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserGuide_AMD));
+            richTextBoxUserGuide_AMD = new RichTextBox();
             SuspendLayout();
             // 
-            // richTextBox1
+            // richTextBoxUserGuide_AMD
             // 
-            richTextBox1.Location = new Point(246, 95);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(100, 96);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            richTextBoxUserGuide_AMD.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBoxUserGuide_AMD.Location = new Point(12, 12);
+            richTextBoxUserGuide_AMD.Name = "richTextBoxUserGuide_AMD";
+            richTextBoxUserGuide_AMD.ReadOnly = true;
+            richTextBoxUserGuide_AMD.Size = new Size(380, 290);
+            richTextBoxUserGuide_AMD.TabIndex = 0;
+            richTextBoxUserGuide_AMD.Text = resources.GetString("richTextBoxUserGuide_AMD.Text");
             // 
-            // UserGuide_AMD
+            // FormUserGuide_AMD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(404, 391);
-            Controls.Add(richTextBox1);
-            Name = "UserGuide_AMD";
+            ClientSize = new Size(404, 315);
+            Controls.Add(richTextBoxUserGuide_AMD);
+            Name = "FormUserGuide_AMD";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User Guide";
             ResumeLayout(false);
@@ -53,6 +56,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 
         #endregion
 
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxUserGuide_AMD;
     }
 }
