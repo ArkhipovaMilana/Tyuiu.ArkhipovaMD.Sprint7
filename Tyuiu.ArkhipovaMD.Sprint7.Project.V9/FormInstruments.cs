@@ -29,32 +29,19 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             }
             return array;
         }
-        public string LoadMatrix()
+        public void ShowMatrix(string[,] array)
         {
-            int rowCount = dataGridView_AMD.RowCount;
-            int colCount = dataGridView_AMD.ColumnCount;
-
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < rowCount; i++)
+            int row = array.GetLength(0);
+            int col = array.GetLength(1);
+            dataGridView_AMD.RowCount = row;
+            dataGridView_AMD.ColumnCount = col;
+            for (int i = 0; i < row; i++)
             {
-                if (dataGridView_AMD.Rows[i].IsNewRow)
-                    continue;
-
-                for (int j = 0; j < colCount; j++)
+                for (int j = 0; j < col; j++)
                 {
-                    object cellValue = dataGridView_AMD.Rows[i].Cells[j].Value;
-                    string value = cellValue == null ? "" : cellValue.ToString();
-
-                    sb.Append(value);
-
-                    if (j < colCount - 1)
-                        sb.Append(';');
+                    dataGridView_AMD.Rows[i].Cells[j].Value = array[i, j];
                 }
-
-                sb.AppendLine();
             }
-            return sb.ToString();
         }
         public FormInstruments_AMD()
         {
@@ -67,23 +54,13 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             DataService ds = new DataService();
             try
             {
-                if (openFileDialog_AMD.ShowDialog() == DialogResult.OK)
-                {
-                    string path = openFileDialog_AMD.FileName;
+                if (openFileDialog_AMD.ShowDialog() != DialogResult.OK)
+                    return;
+                string path = openFileDialog_AMD.FileName;
 
-                    string[,] arrayvalues = ds.LoadDataFromFile(path);
-                    int row = arrayvalues.GetLength(0);
-                    int col = arrayvalues.GetLength(1);
-                    dataGridView_AMD.RowCount = row;
-                    dataGridView_AMD.ColumnCount = col;
-                    for (int i = 0; i < row; i++)
-                    {
-                        for (int j = 0; j < col; j++)
-                        {
-                            dataGridView_AMD.Rows[i].Cells[j].Value = arrayvalues[i, j];
-                        }
-                    }
-                }
+                string[,] arrayvalues = ds.LoadDataFromFile(path);
+                ShowMatrix(arrayvalues);
+
             }
             catch (Exception ex)
             {
@@ -95,6 +72,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         {
             try
             {
+                DataService ds = new DataService();
                 saveFileDialog_AMD.RestoreDirectory = true;
                 saveFileDialog_AMD.InitialDirectory = Directory.GetCurrentDirectory();
 
@@ -102,9 +80,9 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
                     return;
 
                 string path = saveFileDialog_AMD.FileName;
-                string data = LoadMatrix();
-
-                File.WriteAllText(path, data);
+                string[,] matrix = GetMatrix();
+                string result = ds.SaveData(path, matrix);
+                MessageBox.Show($"File : {result}Saved Succsessfully!");
             }
             catch (Exception ex)
             {
@@ -168,7 +146,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 
                 string[,] matrix = GetMatrix();
 
-                double result = ds.DataStatistics(matrix, action, column);
+                double result = ds.DataStatistics(matrix, action, column-1);
 
                 textBoxStatisticOutput_AMD.Text = Convert.ToString(result);
             }
@@ -177,29 +155,35 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
 
         private void buttonSortSort_AMD_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 DataService ds = new DataService();
                 int col = Convert.ToInt32(comboBoxSortColumn_AMD.Text);
                 string sort = Convert.ToString(comboBoxSortSort_AMD.Text);
-                string[,] matrix= GetMatrix();
-                string[,] array = ds.SaleSort(matrix,col,sort);
+                string[,] matrix = GetMatrix();
+                string[,] sortedMatrix = ds.SaleSort(matrix, col-1, sort);
 
-                for (int r = 0; r < matrix.GetLength(0); r++)
-                {
-                    for (int c = 0; c < matrix.GetLength(1); c++)
-                    {
-                        dataGridView_AMD.Rows[r].Cells[c].Value = array[r, c];
-                    }
-
-                }
+                ShowMatrix(sortedMatrix);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void buttonEditAddRow_AMD_Click(object sender, EventArgs e)
+        {
+            dataGridView_AMD.Rows.Add();
+        }
+
+        private void buttonEditDeleteRow_AMD_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dataGridView_AMD.SelectedRows)
+            {
+                dataGridView_AMD.Rows.Remove(row);
+            }
         }
     }
 

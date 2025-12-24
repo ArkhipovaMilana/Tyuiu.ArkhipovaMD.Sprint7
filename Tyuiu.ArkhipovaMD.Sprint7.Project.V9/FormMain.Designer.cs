@@ -115,12 +115,13 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // pictureBoxMain_AMD
             // 
+            pictureBoxMain_AMD.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxMain_AMD.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxMain_AMD.Dock = DockStyle.Fill;
             pictureBoxMain_AMD.Image = Properties.Resources.i;
             pictureBoxMain_AMD.Location = new Point(0, 0);
             pictureBoxMain_AMD.Name = "pictureBoxMain_AMD";
-            pictureBoxMain_AMD.Size = new Size(92, 250);
+            pictureBoxMain_AMD.Size = new Size(1202, 802);
+            pictureBoxMain_AMD.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxMain_AMD.TabIndex = 0;
             pictureBoxMain_AMD.TabStop = false;
             // 
@@ -128,7 +129,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             ClientSize = new Size(316, 250);
             Controls.Add(panel2);
             Controls.Add(panelMain_AMD);

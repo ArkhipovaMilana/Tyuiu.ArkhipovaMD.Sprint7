@@ -35,8 +35,36 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9.Lib
 
             return result;
         }
+
+        public string SaveData(string path, string[,] matrix)
+        {
+            int row = matrix.GetLength(0);
+            int col = matrix.GetLength(1);
+            string data = "";
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    if (j != col - 1)
+                    {
+                        data = data + matrix[i, j] + ";";
+                    }
+                    else
+                    {
+                        data += matrix[i, j];
+                    }
+                }
+                if (i != row - 1)
+                {
+                    data += "\t\n";
+                }
+            }
+            File.WriteAllText(path, data);
+            return path;
+        }
     
-    public double DataStatistics(object[,] data, string commandStat, int column)
+        public double DataStatistics(object[,] data, string commandStat, int column)
         {
             int numRows = data.GetLength(0);
             int numColumns = data.GetLength(1);
@@ -90,55 +118,95 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9.Lib
             }
             if (commandStat == "amo")
             {
-                result = data.GetLength(0) * data.GetLength(1);
+                result = data.GetLength(0);
             }
 
             return result;
         }
-        public string[,] SaleSort(string[,] data,int targetCol,string command)
+        public string[,] SaleSort(string[,] data, int targetCol, string command)
         {
-            
             int rows = data.GetLength(0);
-            int columns = data.GetLength(1);
-            targetCol -= 1;
+            int cols = data.GetLength(1);
 
-            string[,] sortedArray = (string[,])data.Clone();
-            if (command == "ascending")
+            // Проверка номера столбца
+            if (targetCol < 0 || targetCol >= cols)
+                throw new ArgumentException("Неверный номер столбца");
+
+            // Проверка команды
+            if (command != "ascending" && command != "decreasing")
+                throw new ArgumentException("Неизвестная команда сортировки");
+
+            // Копируем исходный массив (исходный менять нельзя)
+            string[,] result = new string[rows, cols];
+            for (int i = 0; i < rows; i++)
+                for (int j = 0; j < cols; j++)
+                    result[i, j] = data[i, j];
+
+            // Массив для числовых значений столбца
+            double[] values = new double[rows];
+            bool[] isEmpty = new bool[rows];
+
+            for (int i = 0; i < rows; i++)
             {
+                string cell = result[i, targetCol];
 
-                for (int i = 0; i < rows - 1; i++)
+                if (string.IsNullOrWhiteSpace(cell))
                 {
+                    isEmpty[i] = true;
+                }
+                else
+                {
+                    if (!double.TryParse(cell, out values[i]))
+                        throw new Exception($"В столбце {targetCol} обнаружено нечисловое значение");
 
-                    if (Convert.ToInt32(sortedArray[i, targetCol]) > Convert.ToInt32(sortedArray[i + 1, targetCol]))
-                    {
-                        for (int k = 0; k < columns; k++)
-                        {
-                            string temp = sortedArray[i, k];
-                            sortedArray[i, k] = sortedArray[i + 1, k];
-                            sortedArray[i + 1, k] = temp;
-                        }
-                    }
-
+                    isEmpty[i] = false;
                 }
             }
-            if (command=="decreasing")
-            {
-                for (int i = 0; i < rows - 1; i++)
-                {
 
-                    if (Convert.ToInt32(sortedArray[i, targetCol]) < Convert.ToInt32(sortedArray[i + 1, targetCol]))
+            // Стабильная сортировка (пузырёк)
+            for (int i = 0; i < rows - 1; i++)
+            {
+                for (int j = 0; j < rows - i - 1; j++)
+                {
+                    bool needSwap = false;
+
+                    // Пустые строки всегда идут в конец
+                    if (isEmpty[j] && !isEmpty[j + 1])
+                        needSwap = false;
+                    else if (!isEmpty[j] && isEmpty[j + 1])
+                        needSwap = true;
+                    else if (!isEmpty[j] && !isEmpty[j + 1])
                     {
-                        for (int k = 0; k < columns; k++)
-                        {
-                            string temp = sortedArray[i, k];
-                            sortedArray[i, k] = sortedArray[i + 1, k];
-                            sortedArray[i + 1, k] = temp;
-                        }
+                        if (command == "ascending" && values[j] > values[j + 1])
+                            needSwap = true;
+
+                        if (command == "decreasing" && values[j] < values[j + 1])
+                            needSwap = true;
                     }
 
+                    if (needSwap)
+                    {
+                        // меняем числовые значения
+                        double tmpVal = values[j];
+                        values[j] = values[j + 1];
+                        values[j + 1] = tmpVal;
+
+                        bool tmpEmpty = isEmpty[j];
+                        isEmpty[j] = isEmpty[j + 1];
+                        isEmpty[j + 1] = tmpEmpty;
+
+                        // меняем строки целиком
+                        for (int c = 0; c < cols; c++)
+                        {
+                            string tmp = result[j, c];
+                            result[j, c] = result[j + 1, c];
+                            result[j + 1, c] = tmp;
+                        }
+                    }
                 }
             }
-            return sortedArray;
+
+            return result;
         }
     }
 }

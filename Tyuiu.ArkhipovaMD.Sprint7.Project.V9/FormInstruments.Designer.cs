@@ -42,7 +42,14 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             tabPageFile_AMD = new TabPage();
             buttonSaveFile_AMD = new Button();
             buttonOpenFile_AMD = new Button();
+            tabPageMatrix_AMD = new TabPage();
+            buttonEditDeleteRow_AMD = new Button();
+            buttonEditAddRow_AMD = new Button();
             tabPageOperations_AMD = new TabPage();
+            labelSort_AMD = new Label();
+            comboBoxSortSort_AMD = new ComboBox();
+            comboBoxSortColumn_AMD = new ComboBox();
+            buttonSortSort_AMD = new Button();
             textBoxStatisticOutput_AMD = new TextBox();
             labelStatistic_AMD = new Label();
             labelSearch_AMD = new Label();
@@ -52,14 +59,11 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             textBoxFind_AMD = new TextBox();
             buttonFind_AMD = new Button();
             toolTip_AMD = new ToolTip(components);
-            buttonSortSort_AMD = new Button();
-            comboBoxSortColumn_AMD = new ComboBox();
-            comboBoxSortSort_AMD = new ComboBox();
-            labelSort_AMD = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView_AMD).BeginInit();
             panel1.SuspendLayout();
             tabControl_AMD.SuspendLayout();
             tabPageFile_AMD.SuspendLayout();
+            tabPageMatrix_AMD.SuspendLayout();
             tabPageOperations_AMD.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,44 +73,51 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // 
             // dataGridView_AMD
             // 
+            dataGridView_AMD.AllowUserToAddRows = false;
+            dataGridView_AMD.AllowUserToDeleteRows = false;
+            dataGridView_AMD.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView_AMD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView_AMD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_AMD.Columns.AddRange(new DataGridViewColumn[] { VideoCode, Date, Duration, Theme, Cost });
-            dataGridView_AMD.Dock = DockStyle.Bottom;
-            dataGridView_AMD.Location = new Point(0, 102);
+            dataGridView_AMD.Location = new Point(0, 81);
             dataGridView_AMD.Name = "dataGridView_AMD";
-            dataGridView_AMD.Size = new Size(800, 273);
+            dataGridView_AMD.Size = new Size(800, 294);
             dataGridView_AMD.TabIndex = 6;
             // 
             // VideoCode
             // 
             VideoCode.HeaderText = "код видеоленты";
             VideoCode.Name = "VideoCode";
-            VideoCode.Width = 110;
+            VideoCode.SortMode = DataGridViewColumnSortMode.NotSortable;
+            VideoCode.Width = 91;
             // 
             // Date
             // 
             Date.HeaderText = "дата записи";
             Date.Name = "Date";
-            Date.Width = 88;
+            Date.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Date.Width = 69;
             // 
             // Duration
             // 
             Duration.HeaderText = "длительность";
             Duration.Name = "Duration";
-            Duration.Width = 107;
+            Duration.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Duration.Width = 88;
             // 
             // Theme
             // 
             Theme.HeaderText = "тема";
             Theme.Name = "Theme";
-            Theme.Width = 58;
+            Theme.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Theme.Width = 39;
             // 
             // Cost
             // 
             Cost.HeaderText = "стоимость";
             Cost.Name = "Cost";
-            Cost.Width = 90;
+            Cost.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Cost.Width = 71;
             // 
             // panel1
             // 
@@ -121,6 +132,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             // tabControl_AMD
             // 
             tabControl_AMD.Controls.Add(tabPageFile_AMD);
+            tabControl_AMD.Controls.Add(tabPageMatrix_AMD);
             tabControl_AMD.Controls.Add(tabPageOperations_AMD);
             tabControl_AMD.Dock = DockStyle.Top;
             tabControl_AMD.Location = new Point(0, 0);
@@ -161,6 +173,38 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             buttonOpenFile_AMD.UseVisualStyleBackColor = true;
             buttonOpenFile_AMD.Click += openToolStripMenuItem_Click;
             // 
+            // tabPageMatrix_AMD
+            // 
+            tabPageMatrix_AMD.Controls.Add(buttonEditDeleteRow_AMD);
+            tabPageMatrix_AMD.Controls.Add(buttonEditAddRow_AMD);
+            tabPageMatrix_AMD.Location = new Point(4, 24);
+            tabPageMatrix_AMD.Name = "tabPageMatrix_AMD";
+            tabPageMatrix_AMD.Padding = new Padding(3);
+            tabPageMatrix_AMD.Size = new Size(792, 51);
+            tabPageMatrix_AMD.TabIndex = 2;
+            tabPageMatrix_AMD.Text = "Edit";
+            tabPageMatrix_AMD.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditDeleteRow_AMD
+            // 
+            buttonEditDeleteRow_AMD.Location = new Point(108, 14);
+            buttonEditDeleteRow_AMD.Name = "buttonEditDeleteRow_AMD";
+            buttonEditDeleteRow_AMD.Size = new Size(75, 23);
+            buttonEditDeleteRow_AMD.TabIndex = 1;
+            buttonEditDeleteRow_AMD.Text = "Delete row";
+            buttonEditDeleteRow_AMD.UseVisualStyleBackColor = true;
+            buttonEditDeleteRow_AMD.Click += buttonEditDeleteRow_AMD_Click;
+            // 
+            // buttonEditAddRow_AMD
+            // 
+            buttonEditAddRow_AMD.Location = new Point(10, 14);
+            buttonEditAddRow_AMD.Name = "buttonEditAddRow_AMD";
+            buttonEditAddRow_AMD.Size = new Size(75, 23);
+            buttonEditAddRow_AMD.TabIndex = 0;
+            buttonEditAddRow_AMD.Text = "Add row";
+            buttonEditAddRow_AMD.UseVisualStyleBackColor = true;
+            buttonEditAddRow_AMD.Click += buttonEditAddRow_AMD_Click;
+            // 
             // tabPageOperations_AMD
             // 
             tabPageOperations_AMD.Controls.Add(labelSort_AMD);
@@ -182,6 +226,44 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             tabPageOperations_AMD.TabIndex = 1;
             tabPageOperations_AMD.Text = "Operations";
             tabPageOperations_AMD.UseVisualStyleBackColor = true;
+            // 
+            // labelSort_AMD
+            // 
+            labelSort_AMD.AutoSize = true;
+            labelSort_AMD.Location = new Point(196, 4);
+            labelSort_AMD.Name = "labelSort_AMD";
+            labelSort_AMD.Size = new Size(34, 15);
+            labelSort_AMD.TabIndex = 11;
+            labelSort_AMD.Text = "Sort :";
+            // 
+            // comboBoxSortSort_AMD
+            // 
+            comboBoxSortSort_AMD.FormattingEnabled = true;
+            comboBoxSortSort_AMD.Items.AddRange(new object[] { "ascending", "decreasing" });
+            comboBoxSortSort_AMD.Location = new Point(247, 22);
+            comboBoxSortSort_AMD.Name = "comboBoxSortSort_AMD";
+            comboBoxSortSort_AMD.Size = new Size(62, 23);
+            comboBoxSortSort_AMD.TabIndex = 10;
+            // 
+            // comboBoxSortColumn_AMD
+            // 
+            comboBoxSortColumn_AMD.FormattingEnabled = true;
+            comboBoxSortColumn_AMD.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            comboBoxSortColumn_AMD.Location = new Point(196, 22);
+            comboBoxSortColumn_AMD.Name = "comboBoxSortColumn_AMD";
+            comboBoxSortColumn_AMD.Size = new Size(45, 23);
+            comboBoxSortColumn_AMD.TabIndex = 9;
+            // 
+            // buttonSortSort_AMD
+            // 
+            buttonSortSort_AMD.Location = new Point(315, 22);
+            buttonSortSort_AMD.Name = "buttonSortSort_AMD";
+            buttonSortSort_AMD.Size = new Size(49, 23);
+            buttonSortSort_AMD.TabIndex = 8;
+            buttonSortSort_AMD.Text = "Sort";
+            toolTip_AMD.SetToolTip(buttonSortSort_AMD, "Sorting");
+            buttonSortSort_AMD.UseVisualStyleBackColor = true;
+            buttonSortSort_AMD.Click += buttonSortSort_AMD_Click;
             // 
             // textBoxStatisticOutput_AMD
             // 
@@ -255,44 +337,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             buttonFind_AMD.UseVisualStyleBackColor = true;
             buttonFind_AMD.Click += buttonFind_AMD_Click;
             // 
-            // buttonSortSort_AMD
-            // 
-            buttonSortSort_AMD.Location = new Point(315, 22);
-            buttonSortSort_AMD.Name = "buttonSortSort_AMD";
-            buttonSortSort_AMD.Size = new Size(49, 23);
-            buttonSortSort_AMD.TabIndex = 8;
-            buttonSortSort_AMD.Text = "Sort";
-            toolTip_AMD.SetToolTip(buttonSortSort_AMD, "Sorting");
-            buttonSortSort_AMD.UseVisualStyleBackColor = true;
-            buttonSortSort_AMD.Click += buttonSortSort_AMD_Click;
-            // 
-            // comboBoxSortColumn_AMD
-            // 
-            comboBoxSortColumn_AMD.FormattingEnabled = true;
-            comboBoxSortColumn_AMD.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
-            comboBoxSortColumn_AMD.Location = new Point(196, 22);
-            comboBoxSortColumn_AMD.Name = "comboBoxSortColumn_AMD";
-            comboBoxSortColumn_AMD.Size = new Size(45, 23);
-            comboBoxSortColumn_AMD.TabIndex = 9;
-            // 
-            // comboBoxSortSort_AMD
-            // 
-            comboBoxSortSort_AMD.FormattingEnabled = true;
-            comboBoxSortSort_AMD.Items.AddRange(new object[] { "ascending", "decreasing" });
-            comboBoxSortSort_AMD.Location = new Point(247, 22);
-            comboBoxSortSort_AMD.Name = "comboBoxSortSort_AMD";
-            comboBoxSortSort_AMD.Size = new Size(62, 23);
-            comboBoxSortSort_AMD.TabIndex = 10;
-            // 
-            // labelSort_AMD
-            // 
-            labelSort_AMD.AutoSize = true;
-            labelSort_AMD.Location = new Point(196, 4);
-            labelSort_AMD.Name = "labelSort_AMD";
-            labelSort_AMD.Size = new Size(34, 15);
-            labelSort_AMD.TabIndex = 11;
-            labelSort_AMD.Text = "Sort :";
-            // 
             // FormInstruments_AMD
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,6 +349,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
             panel1.ResumeLayout(false);
             tabControl_AMD.ResumeLayout(false);
             tabPageFile_AMD.ResumeLayout(false);
+            tabPageMatrix_AMD.ResumeLayout(false);
             tabPageOperations_AMD.ResumeLayout(false);
             tabPageOperations_AMD.PerformLayout();
             ResumeLayout(false);
@@ -315,11 +360,6 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         private DataGridView dataGridView_AMD;
         private SaveFileDialog saveFileDialog_AMD;
         private Panel panel1;
-        private DataGridViewTextBoxColumn VideoCode;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Duration;
-        private DataGridViewTextBoxColumn Theme;
-        private DataGridViewTextBoxColumn Cost;
         private TabControl tabControl_AMD;
         private TabPage tabPageFile_AMD;
         private Button buttonSaveFile_AMD;
@@ -338,5 +378,13 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9
         private ComboBox comboBoxSortColumn_AMD;
         private Button buttonSortSort_AMD;
         private Label labelSort_AMD;
+        private TabPage tabPageMatrix_AMD;
+        private Button buttonEditDeleteRow_AMD;
+        private Button buttonEditAddRow_AMD;
+        private DataGridViewTextBoxColumn VideoCode;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Duration;
+        private DataGridViewTextBoxColumn Theme;
+        private DataGridViewTextBoxColumn Cost;
     }
 }
