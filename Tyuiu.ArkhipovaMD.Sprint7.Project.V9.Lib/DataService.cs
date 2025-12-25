@@ -128,21 +128,18 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9.Lib
             int rows = data.GetLength(0);
             int cols = data.GetLength(1);
 
-            // Проверка номера столбца
             if (targetCol < 0 || targetCol >= cols)
                 throw new ArgumentException("Неверный номер столбца");
 
-            // Проверка команды
             if (command != "ascending" && command != "decreasing")
                 throw new ArgumentException("Неизвестная команда сортировки");
 
-            // Копируем исходный массив (исходный менять нельзя)
             string[,] result = new string[rows, cols];
             for (int i = 0; i < rows; i++)
                 for (int j = 0; j < cols; j++)
                     result[i, j] = data[i, j];
 
-            // Массив для числовых значений столбца
+
             double[] values = new double[rows];
             bool[] isEmpty = new bool[rows];
 
@@ -157,20 +154,20 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9.Lib
                 else
                 {
                     if (!double.TryParse(cell, out values[i]))
-                        throw new Exception($"В столбце {targetCol} обнаружено нечисловое значение");
+                        throw new Exception($"В столбце {targetCol} есть нечисловое значение");
 
                     isEmpty[i] = false;
                 }
             }
 
-            // Стабильная сортировка (пузырёк)
+
             for (int i = 0; i < rows - 1; i++)
             {
                 for (int j = 0; j < rows - i - 1; j++)
                 {
                     bool needSwap = false;
 
-                    // Пустые строки всегда идут в конец
+         
                     if (isEmpty[j] && !isEmpty[j + 1])
                         needSwap = false;
                     else if (!isEmpty[j] && isEmpty[j + 1])
@@ -186,7 +183,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9.Lib
 
                     if (needSwap)
                     {
-                        // меняем числовые значения
+              
                         double tmpVal = values[j];
                         values[j] = values[j + 1];
                         values[j + 1] = tmpVal;
@@ -195,7 +192,7 @@ namespace Tyuiu.ArkhipovaMD.Sprint7.Project.V9.Lib
                         isEmpty[j] = isEmpty[j + 1];
                         isEmpty[j + 1] = tmpEmpty;
 
-                        // меняем строки целиком
+   
                         for (int c = 0; c < cols; c++)
                         {
                             string tmp = result[j, c];
